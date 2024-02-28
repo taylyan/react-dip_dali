@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import BannerImage from '../assets/security.jpg'
-import '../styles/Home.css';
+import '../css/Home.css';
 import axios from 'axios'
 
 const Home = () => {
