@@ -4,10 +4,9 @@
   "description": "",
   "main": "index.js",
   "type": "module",
-  "http.proxySupport": "off",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "PATH=/opt/render/project/src/server/node_modules/.bin:$nodemon index.js && npm start"
+    "start": "server/index.js"
   },
   "keywords": [],
   "author": "",
