@@ -4,7 +4,7 @@ const router = express.Router();
 
 const thingSpeakAPI = 'https://api.thingspeak.com/channels/2295351/fields/1/last.json?api_key=Y62GZ7WDLD9BU1WR';
 
-router.get('/api/thingspeak', async (req, res) => {
+router.get('/thingspeak', async (req, res) => {
   try {
     const response = await axios.get(thingSpeakAPI);
     console.log(response.data);

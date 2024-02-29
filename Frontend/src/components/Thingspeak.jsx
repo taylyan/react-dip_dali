@@ -8,8 +8,8 @@ function ThingSpeakData() {
         const fetchData = async () => {
             try {
                 const response = await axios.get('/api/thingspeak');
-
-                setFieldValue(response.data.value);
+                console.log(response.data);
+                setFieldValue(response.data.field1);
             } catch (error) {
                 console.error('Error fetching data from ThingSpeak:', error);
             }
