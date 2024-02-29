@@ -15,4 +15,4 @@ router.get('/thingspeak', async (req, res) => {
   }
 });
 
-export {router as apiRouter}
+export {router as apiRoutes}
