@@ -36,7 +36,20 @@ app.get('/dashboard', async (req, res) => {
         return res.json(err)
     }
 })
- 
+app.useEffect(() => {
+    const fetchData = async () => {
+        try {
+            const response = await axios.get('/api/thingspeak');
+            console.log(response.data.field1);
+            setFieldValue(response.data.field1);
+        } catch (error) {
+            console.error('Error fetching data from ThingSpeak:', error);
+        }
+    };
+
+    fetchData();
+}, []);
+
 app.listen(process.env.PORT, () => {
-    console.log("Serve is Running");
+    console.log("Server is Running");
 })
