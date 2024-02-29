@@ -20,7 +20,7 @@ function ThingSpeakData() {
     return (
         <div>
         <h2>Movement Data</h2>
-        <p>Movement: {data.movement} °C</p>
+        <p>Movement: {data} </p>
         <p>Last Updated: {new Date(data.timestamp).toLocaleString()}</p>
         </div>
     );
