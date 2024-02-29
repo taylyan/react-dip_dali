@@ -1,10 +1,9 @@
-
 const express = require('express');
 const axios = require('axios');
 
 const router = express.Router();
 
-const thingSpeakAPI = 'https://api.thingspeak.com/channels/2295351/fields/1/last.json?api_key=7JNHTJGWR1NBR2OX';
+const thingSpeakAPI = 'https://api.thingspeak.com/channels/1/fields/1/last.json?api_key=7JNHTJGWR1NBR2OX';
 
 router.get('/thingspeak', async (req, res) => {
   try {
@@ -16,4 +15,4 @@ router.get('/thingspeak', async (req, res) => {
   }
 });
 
-export {router as apiRoutes}
+export {router as apiRouter}
