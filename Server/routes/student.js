@@ -25,4 +25,4 @@ router.post('/register',verifyAdmin, async (req, res) => {
     }
 })
 
-export {router as apiRoutes}
+export {router as studentRouter}
