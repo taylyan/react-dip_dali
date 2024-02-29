@@ -11,6 +11,7 @@ import axios from "axios";
 import AddBook from "./components/AddBook";
 import EditBook from "./components/EditBook";
 import DeleteBook from "./components/DeleteBook";
+import ThingSpeakData from "./components/Thingspeak";
 
 function App() {
   const [role, setRole] = useState('')
@@ -35,6 +36,7 @@ function App() {
         <Route path="/books" element={<Books role = {role}/>}></Route>
         <Route path="/login" element={<Login setRoleVar = {setRole}/>}></Route>
         <Route path="/dashboard" element={<Dashboard />}></Route>
+        <Route path="/thingspeak" element={<ThingSpeakData />}></Route>
         <Route path="/addstudent" element={<AddStudent />}></Route>
         <Route path="/logout" element={<Logout setRole = {setRole}/>}></Route>
         <Route path="/addbook" element={<AddBook />}></Route>

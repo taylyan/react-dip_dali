@@ -14,6 +14,8 @@ const Navbar = ({role}) => {
               <Link to="/addbook" className="navbar-link">Add Book</Link>
               <Link to="/addstudent" className="navbar-link">Add Student</Link>
               <Link to="/dashboard" className="navbar-link">Dashboard</Link>
+              <Link to="/thingspeak" className="navbar-link">Thingspeak</Link>
+
             </>
             }
             {role === "" ?

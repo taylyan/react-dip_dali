@@ -9,6 +9,7 @@ import { bookRouter } from './routes/book.js'
 import { Book } from './models/Book.js'
 import { Student } from './models/Student.js'
 import { Admin } from './models/Admin.js'
+import { apiRoutes } from './routes/api.js'
 
 const app = express()
 app.use(express.json())
@@ -21,6 +22,9 @@ dotenv.config()
 app.use('/auth', AdminRouter)
 app.use('/student', studentRouter)
 app.use('/book', bookRouter)
+
+app.use('/thingspeak', apiRoutes);
+
 
 app.get('/dashboard', async (req, res) => {
     try {
