@@ -2,8 +2,7 @@ import express from 'express'
 import axios from "axios";
 
 const router = express.Router();
-
-const thingSpeakAPI = 'https://api.thingspeak.com/channels/2295351/fields/1.json?api_key=Y62GZ7WDLD9BU1WR';
+const thingSpeakAPI = 'https://api.thingspeak.com/channels/2295351/fields/1/last.json?api_key=Y62GZ7WDLD9BU1WR';
 
 router.get('/thingspeak', async (req, res) => {
   try {
