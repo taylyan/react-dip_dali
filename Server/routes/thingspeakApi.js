@@ -4,11 +4,12 @@ const router = express.Router();
 
 const thingSpeakAPI = 'https://api.thingspeak.com/channels/2295351/fields/1/last.json?api_key=Y62GZ7WDLD9BU1WR';
 
-router.get('/thingspeak', async (req, res) => {
+router.get('/api/thingspeak', async (req, res) => {
   try {
     const response = await axios.get(thingSpeakAPI);
+    console.log(response.data);
     res.console(response.data);
-    const fieldValue = response.data.feeds[2].field1;
+    const fieldValue = response.data.field1; // Access field1 directly
     res.json({ value: fieldValue });
 
   } catch (error) {

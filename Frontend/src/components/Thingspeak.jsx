@@ -7,7 +7,7 @@ function ThingSpeakData() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('https://react-dip-dali-front.onrender.com/api/thingspeak');
+                const response = await axios.get('/api/thingspeak');
 
                 setFieldValue(response.data.value);
             } catch (error) {
