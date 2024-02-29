@@ -9,7 +9,7 @@ import { bookRouter } from './routes/book.js'
 import { Book } from './models/Book.js'
 import { Student } from './models/Student.js'
 import { Admin } from './models/Admin.js'
-import { apiRouter } from './routes/api.js'
+import { apiRouter } from './routes/thingspeakApi.js'
 
 const app = express()
 app.use(express.json())
@@ -23,7 +23,7 @@ app.use('/auth', AdminRouter)
 app.use('/student', studentRouter)
 app.use('/book', bookRouter)
 
-app.use('/thingspeak', apiRouter);
+app.use('/api/thingspeak', apiRouter);
 
 
 app.get('/dashboard', async (req, res) => {
