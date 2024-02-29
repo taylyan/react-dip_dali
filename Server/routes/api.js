@@ -1,9 +1,6 @@
 import express from 'express'
 import axios from "axios"
 
-const express = require('express');
-const axios = require('axios');
-
 const router = express.Router();
 
 const thingSpeakAPI = 'https://api.thingspeak.com/channels/2295351/fields/1/last.json?api_key=7JNHTJGWR1NBR2OX';
