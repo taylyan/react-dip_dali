@@ -7,7 +7,7 @@ function ThingSpeakData() {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await axios.get('https://api.thingspeak.com/channels/2295351/fields/1/last.json?api_key=Y62GZ7WDLD9BU1WR');
+                const response = await axios.get('/api/thingspeak');
 
                 setFieldValue(response.data.value);
             } catch (error) {

@@ -8,7 +8,7 @@ router.get('/thingspeak', async (req, res) => {
   try {
     const response = await axios.get(thingSpeakAPI);
     res.console(response.data);
-    const fieldValue = response.data.feeds[0].field1;
+    const fieldValue = response.data.feeds[2].field1;
     res.json({ value: fieldValue });
 
   } catch (error) {
