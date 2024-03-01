@@ -11,7 +11,6 @@ const Home = () => {
         <div className="headerContainer" >
 
             <h1> Securiti is nymber one priority</h1>
-            <p>For every valuble place</p>
             
                     
         </div>
