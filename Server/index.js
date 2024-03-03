@@ -4,10 +4,10 @@ import cors from 'cors'
 import cookieParser from 'cookie-parser'
 import './db.js'
 import { AdminRouter } from './routes/auth.js'
-import { studentRouter } from './routes/student.js'
+import { userRouter } from './routes/user.js'
 import { bookRouter } from './routes/book.js'
 import { Book } from './models/Book.js'
-import { Student } from './models/Student.js'
+import { User } from './models/User.js'
 import { Admin } from './models/Admin.js'
 import { apiRouter } from './routes/thingspeakApi.js'
 
@@ -20,7 +20,7 @@ app.use(cors({
 app.use(cookieParser())
 dotenv.config()
 app.use('/auth', AdminRouter)
-app.use('/student', studentRouter) // napravi user
+app.use('/user', userRouter) // napravi user
 app.use('/book', bookRouter) //ustroistvo device 
 
 app.use('/api/thingspeak', apiRouter);
@@ -28,10 +28,10 @@ app.use('/api/thingspeak', apiRouter);
 
 app.get('/dashboard', async (req, res) => {
     try {
-        const student = await Student.countDocuments()
+        const user = await User.countDocuments()
         const admin = await Admin.countDocuments()
         const book = await Book.countDocuments()
-        return res.json({ok: true, student, book, admin})
+        return res.json({ok: true, user, book, admin})
     } catch(err) {
         return res.json(err)
     }

@@ -3,7 +3,7 @@ import '../css/Dashboard.css'
 import axios from 'axios'
 
 const Dashboard = () => {
-  const [students, setStudents] = useState(0)
+  const [users, setUsers] = useState(0)
   const [admin, setAdmin] = useState(0)
   const [books, setBooks] = useState(0)
 
@@ -11,7 +11,7 @@ const Dashboard = () => {
     axios.get('https://react-dip-dali.onrender.com/dashboard')
     .then(res => {
       if(res.data.ok) {
-        setStudents(res.data.student)
+        setUsers(res.data.user)
         setAdmin(res.data.admin)
         setBooks(res.data.book)
       }
@@ -25,7 +25,7 @@ const Dashboard = () => {
       </div>
       <div className="dashboard-box">
         <h2>Total Users</h2> <br />
-        <h2>{students}</h2>
+        <h2>{users}</h2>
       </div>
       <div className="dashboard-box">
         <h2>Total Admins</h2> <br />

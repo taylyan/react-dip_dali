@@ -15,8 +15,8 @@ const Login = ({setRoleVar}) => {
       if(res.data.login && res.data.role === 'admin') {
         setRoleVar('admin')
         navigate('/dashboard')
-      } else if (res.data.login && res.data.role === 'student') {
-        setRoleVar("student")
+      } else if (res.data.login && res.data.role === 'user') {
+        setRoleVar("user")
         navigate('/')
       }
       console.log(res)
@@ -43,7 +43,7 @@ const Login = ({setRoleVar}) => {
           <select name="role" id="role"
            onChange={(e) => setRole(e.target.value)}>
             <option value="admin">Admin</option>
-            <option value="student">Student</option>
+            <option value="user">User</option>
           </select>
         </div>
         <button className='btn-login' onClick={handleSubmit}>Login</button>

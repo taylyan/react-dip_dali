@@ -2,16 +2,16 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import  {useNavigate} from 'react-router-dom'
 
-const AddStudent = () => {
-    const [roll, setRoll] = useState('')
+const AddUser = () => {
+    const [region, setRoll] = useState('')
     const [username, setUsername] = useState('')
-    const [grade, setGrade] = useState('') // make it email
+    const [email, setGrade] = useState('') 
     const [password, setPassword] = useState('')
     const navigate = useNavigate()
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.post('https://react-dip-dali.onrender.com/student/register', {roll, username, password, grade})
+        axios.post('https://react-dip-dali.onrender.com/user/register', {region, username, password, email})
         .then(res => { 
             if(res.data.registered) {
                 navigate('/dashboard')
@@ -26,18 +26,18 @@ const AddStudent = () => {
       <form className="student-form" onSubmit={handleSubmit}>
         <h2>Add Student</h2>
         <div className="form-group">
-          <label htmlFor="roll">Roll No:</label>
-          <input type="text" id="roll" name="roll" 
+          <label htmlFor="region">Област:</label>
+          <input type="text" id="region" name="region" 
           onChange={(e) => setRoll(e.target.value)}/>
         </div>
         <div className="form-group">
-          <label htmlFor="username">User Name:</label>
+          <label htmlFor="username">Username:</label>
           <input type="text" id="username" name="username" 
           onChange={(e) => setUsername(e.target.value)}/>
         </div>
         <div className="form-group">
-          <label htmlFor="grade">Grade:</label>
-          <input type="text" id="grade" name="grade" 
+          <label htmlFor="email">Имейл:</label>
+          <input type="email" id="email" name="email" 
           onChange={(e) => setGrade(e.target.value)}/>
         </div>
         <div className="form-group">
@@ -51,4 +51,4 @@ const AddStudent = () => {
   )
 }
 
-export default AddStudent
+export default AddUser

@@ -1,6 +1,6 @@
 import express from 'express'
 import { Admin } from '../models/Admin.js';
-import { Student } from '../models/Student.js';
+import { User } from '../models/User.js';
 import jwt from 'jsonwebtoken';
 import bcrypt from 'bcrypt'
 const router = express.Router();
@@ -20,18 +20,18 @@ router.post('/login', async (req, res) => {
         const token = jwt.sign({username: admin.username, role: 'admin'}, process.env.Admin_Key)
         res.cookie('token', token, {httpOnly: true, secure: true})
         return res.json({login:true, role: 'admin'})
-    } else if(role === 'student') {
-        const student = await Student.findOne({username})
-        if(!student) {
-            return res.json({message: "student not registered"})
+    } else if(role === 'user') {
+        const user = await User.findOne({username})
+        if(!user) {
+            return res.json({message: "user not registered"})
         }
-        const validPassword = await bcrypt.compare(password, student.password)
+        const validPassword = await bcrypt.compare(password, user.password)
         if(!validPassword) {
             return res.json({message: "wrong password"})
         }
-        const token = jwt.sign({username: student.username, role: 'student'}, process.env.Student_Key)
+        const token = jwt.sign({username: user.username, role: 'user'}, process.env.User_Key)
         res.cookie('token', token, {httpOnly: true, secure: true})
-        return res.json({login:true, role: 'student'})
+        return res.json({login:true, role: 'user'})
     } else {
 
     }
@@ -64,7 +64,7 @@ const verifyUser = (req, res, next) => {
     } else {
         jwt.verify(token, process.env.Admin_Key, (err, decoded) => {
             if(err) {
-                jwt.verify(token, process.env.Student_Key, (err, decoded) => {
+                jwt.verify(token, process.env.User_Key, (err, decoded) => {
                     if(err) {
                         return res.json({message: "Invalid token"})
                     } else {

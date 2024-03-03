@@ -4,7 +4,7 @@ import Navbar from "./components/Navbar";
 import Books from "./components/Books";
 import Login from "./components/Login";
 import Dashboard from "./components/Dashboard";
-import AddStudent from "./components/AddStudent";
+import AddUser from "./components/AddUser";
 import { useEffect, useState } from "react";
 import Logout from "./components/Logout";
 import axios from "axios";
@@ -37,7 +37,7 @@ function App() {
         <Route path="/login" element={<Login setRoleVar = {setRole}/>}></Route>
         <Route path="/dashboard" element={<Dashboard />}></Route>
         <Route path="/thingspeak" element={<ThingSpeakData />}></Route>
-        <Route path="/addstudent" element={<AddStudent />}></Route>
+        <Route path="/adduser" element={<AddUser />}></Route>
         <Route path="/logout" element={<Logout setRole = {setRole}/>}></Route>
         <Route path="/addbook" element={<AddBook />}></Route>
         <Route path="/book/:id" element={<EditBook />}></Route>
