@@ -18,7 +18,7 @@ const Navbar = ({ role }) => {
           <Link to="/books" className='navbar-link'>Books</Link>
         {role === "admin" && <>
           <Link to="/addbook" className="navbar-link">Add Book</Link>
-          <Link to="/adduser" className="navbar-link">Add Клиент</Link>
+          <Link to="/adduser" className="navbar-link">Add Student</Link>
           <Link to="/dashboard" className="navbar-link">Dashboard</Link>
           <Link to="/thingspeak" className="navbar-link">Thingspeak</Link>
 
@@ -35,7 +35,7 @@ const Navbar = ({ role }) => {
         <Link to="/books" className='navbar-link'>Books</Link>
         {role === "admin" && <>
           <Link to="/addbook" className="navbar-link">Add Book</Link>
-          <Link to="/addstudent" className="navbar-link">Add Student</Link>
+          <Link to="/adduser" className="navbar-link">Add Student</Link>
           <Link to="/dashboard" className="navbar-link">Dashboard</Link>
           <Link to="/thingspeak" className="navbar-link">Thingspeak</Link>
 
