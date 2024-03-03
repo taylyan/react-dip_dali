@@ -2,9 +2,9 @@ import express from 'express'
 import { User } from '../models/User.js';
 import bcrypt from 'bcrypt'
 const router = express.Router();
-import { verifyAdmin } from './auth.js';
+//import { verifyAdmin } from './auth.js';
 
-router.post('/register',verifyAdmin, async (req, res) => {
+router.post('/register', async (req, res) => {
     try {
         const {username, password, email, region} = req.body;
         const user = await User.findOne({username})

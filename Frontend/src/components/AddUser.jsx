@@ -3,7 +3,7 @@ import axios from 'axios'
 import  {useNavigate} from 'react-router-dom'
 
 const AddUser = () => {
-    const [region, setRoll] = useState('')
+    const [region, setRegion] = useState('')
     const [username, setUsername] = useState('')
     const [email, setGrade] = useState('') 
     const [password, setPassword] = useState('')
@@ -28,7 +28,7 @@ const AddUser = () => {
         <div className="form-group">
           <label htmlFor="region">Област:</label>
           <input type="text" id="region" name="region" 
-          onChange={(e) => setRoll(e.target.value)}/>
+          onChange={(e) => setRegion(e.target.value)}/>
         </div>
         <div className="form-group">
           <label htmlFor="username">Username:</label>
