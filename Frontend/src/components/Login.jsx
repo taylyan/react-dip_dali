@@ -5,7 +5,7 @@ import axios from 'axios'
 const Login = ({setRoleVar}) => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
-  const [role, setRole] = useState('admin','user')
+  const [role, setRole] = useState('admin')
   const navigate = useNavigate()
 
   axios.defaults.withCredentials = true;
