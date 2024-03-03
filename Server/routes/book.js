@@ -1,9 +1,9 @@
 import express from 'express'
 import { Book } from '../models/Book.js';
 const router = express.Router();
-import { verifyAdmin } from './auth.js';
+//import { verifyAdmin } from './auth.js';
 
-router.post('/add',verifyAdmin, async (req, res) => {
+router.post('/add', async (req, res) => {
     try {
         const {name, author, imageUrl} = req.body;
         const newbook = new Book({
