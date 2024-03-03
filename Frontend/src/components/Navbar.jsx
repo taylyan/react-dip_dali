@@ -24,6 +24,12 @@ const Navbar = ({ role }) => {
 
         </>
         }
+        {role === "user" && <>
+          <Link to="/addbook" className="navbar-link">Add Book</Link>
+          <Link to="/thingspeak" className="navbar-link">Thingspeak</Link>
+
+        </>
+        }
         {role === "" ?
           <Link to="/login" className='navbar-link'>Login</Link>
           : <Link to="/logout" className='navbar-link'>Logout</Link>
@@ -37,6 +43,12 @@ const Navbar = ({ role }) => {
           <Link to="/addbook" className="navbar-link">Add Book</Link>
           <Link to="/adduser" className="navbar-link">Add Student</Link>
           <Link to="/dashboard" className="navbar-link">Dashboard</Link>
+          <Link to="/thingspeak" className="navbar-link">Thingspeak</Link>
+
+        </>
+        }
+        {role === "user" && <>
+          <Link to="/addbook" className="navbar-link">Add Book</Link>
           <Link to="/thingspeak" className="navbar-link">Thingspeak</Link>
 
         </>

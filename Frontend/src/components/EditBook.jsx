@@ -21,7 +21,7 @@ const EditBook = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault()
-        axios.put('http://localhost:3001/book/book/'+id, {name, author, imageUrl})
+        axios.put('https://react-dip-dali.onrender.com/book/book/'+id, {name, author, imageUrl})
         .then(res => { 
             if(res.data.updated) {
                 navigate('/books')
