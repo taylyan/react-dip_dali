@@ -17,7 +17,7 @@ const Login = ({setRoleVar}) => {
         navigate('/dashboard')
       } else if (res.data.login && res.data.role === 'user') {
         setRoleVar('user')
-        navigate('/dashboard')
+        navigate('/books')
       }
       console.log(res)
     })
