@@ -16,7 +16,7 @@ const Login = ({setRoleVar}) => {
         setRoleVar('admin')
         navigate('/dashboard')
       } else if (res.data.login && res.data.role === 'user') {
-        setRoleVar("user")
+        setRoleVar('user')
         navigate('/thingspeak')
       }
       console.log(res)
