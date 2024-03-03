@@ -4,15 +4,11 @@ import Logo from '../assets/logo_gerb.png'
 import '../css/Navbar.css'
 
 const Navbar = ({ role }) => {
-  const [openLinks, setOpenLinks] = useState(false)
-  const toggleNavbar = () => {
-    setOpenLinks(!openLinks)
-  }
   return (
     <nav className='navbar'>
        <img src={Logo} />
       <div className='leftSide'>
-        <div className='leftSide' id={openLinks ? "open" : "close"}>
+        <div className='leftSide'>
 
           <div className='hiddenLinks'>
           <Link to="/books" className='navbar-link'>Books</Link>
