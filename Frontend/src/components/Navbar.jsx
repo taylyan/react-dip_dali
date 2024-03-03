@@ -12,7 +12,8 @@ const Navbar = ({ role }) => {
 
           <div className='hiddenLinks'>
           <Link to="/books" className='navbar-link'>Books</Link>
-        {role === "admin" && <>
+
+        {role === "admin" & <>
           <Link to="/addbook" className="navbar-link">Add Book</Link>
           <Link to="/adduser" className="navbar-link">Add Student</Link>
           <Link to="/dashboard" className="navbar-link">Dashboard</Link>
@@ -20,7 +21,7 @@ const Navbar = ({ role }) => {
 
         </>
         }
-        {role === "user" && <>
+        {role === "user" & <>
           <Link to="/addbook" className="navbar-link">Add Book</Link>
           <Link to="/thingspeak" className="navbar-link">Thingspeak</Link>
 
@@ -35,7 +36,8 @@ const Navbar = ({ role }) => {
       </div>
       <div className='rightSide'>
         <Link to="/books" className='navbar-link'>Books</Link>
-        {role === "admin" && <>
+        
+        {role === "admin" & <>
           <Link to="/addbook" className="navbar-link">Add Book</Link>
           <Link to="/adduser" className="navbar-link">Add Student</Link>
           <Link to="/dashboard" className="navbar-link">Dashboard</Link>
@@ -43,7 +45,8 @@ const Navbar = ({ role }) => {
 
         </>
         }
-        {role === "user" && <>
+
+        {role === "user" & <>
           <Link to="/addbook" className="navbar-link">Add Book</Link>
           <Link to="/thingspeak" className="navbar-link">Thingspeak</Link>
 
