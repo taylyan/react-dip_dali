@@ -20,11 +20,11 @@ const Dashboard = () => {
   return (
     <div className="dashboard">
       <div className="dashboard-box">
-        <h2>Total Books</h2> <br />
+        <h2>Total Devices</h2> <br />
         <h2>{books}</h2>
       </div>
       <div className="dashboard-box">
-        <h2>Total Students</h2> <br />
+        <h2>Total Users</h2> <br />
         <h2>{students}</h2>
       </div>
       <div className="dashboard-box">

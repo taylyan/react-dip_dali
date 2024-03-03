@@ -5,7 +5,7 @@ import  {useNavigate} from 'react-router-dom'
 const AddStudent = () => {
     const [roll, setRoll] = useState('')
     const [username, setUsername] = useState('')
-    const [grade, setGrade] = useState('')
+    const [grade, setGrade] = useState('') // make it email
     const [password, setPassword] = useState('')
     const navigate = useNavigate()
 

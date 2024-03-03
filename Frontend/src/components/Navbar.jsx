@@ -10,9 +10,9 @@ const Navbar = ({ role }) => {
   }
   return (
     <nav className='navbar'>
+       <img src={Logo} />
       <div className='leftSide'>
         <div className='leftSide' id={openLinks ? "open" : "close"}>
-          <img src={Logo} />
 
           <div className='hiddenLinks'>
           <Link to="/books" className='navbar-link'>Books</Link>

@@ -20,8 +20,8 @@ app.use(cors({
 app.use(cookieParser())
 dotenv.config()
 app.use('/auth', AdminRouter)
-app.use('/student', studentRouter)
-app.use('/book', bookRouter)
+app.use('/student', studentRouter) // napravi user
+app.use('/book', bookRouter) //ustroistvo device 
 
 app.use('/api/thingspeak', apiRouter);
 

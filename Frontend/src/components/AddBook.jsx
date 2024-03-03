@@ -4,8 +4,8 @@ import  {useNavigate} from 'react-router-dom'
 
 const AddBook = () => {
     const [name, setName] = useState('')
-    const [author, setAuthor] = useState('')
-    const [imageUrl, setImageUrl] = useState('')
+    const [author, setAuthor] = useState('') // make it thingspeakLink
+    const [imageUrl, setImageUrl] = useState('') // eventualno nqkvo zaglavie, / etaj
     const navigate = useNavigate()
 
     const handleSubmit = (e) => {
