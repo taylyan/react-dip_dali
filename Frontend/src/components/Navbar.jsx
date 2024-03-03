@@ -53,7 +53,6 @@ const Navbar = ({ role }) => {
           <Link to="/login" className='navbar-link'>Login</Link>
           : <Link to="/logout" className='navbar-link'>Logout</Link>
         }
-        <button onClick={toggleNavbar}> </button>
       </div>
     </nav>
   )
