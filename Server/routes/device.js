@@ -1,12 +1,12 @@
 import express from 'express'
 import { Device } from '../models/Device.js';
 const router = express.Router();
-//import { verifyAdmin } from './auth.js';
+import { verifyAdmin } from './auth.js';
 
-router.post('/add', async (req, res) => {
+router.post('/add',verifyAdmin, async (req, res) => {
     try {
         const {name, description, channel,chart} = req.body;
-        const newdevice = new Book({
+        const newdevice = new Device({
             name,
             description,
             channel,
