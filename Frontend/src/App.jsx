@@ -34,7 +34,7 @@ function App() {
       <Navbar role = {role}/>
       <Routes>
         <Route path="/" element={<Home/>}></Route>
-        <Route path="/devices" element={<Devices role = {role}/>}></Route>
+        <Route path="/devices" element={<Device role = {role}/>}></Route>
         <Route path="/login" element={<Login setRoleVar = {setRole}/>}></Route>
         <Route path="/dashboard" element={<Dashboard />}></Route>
         <Route path="/thingspeak" element={<ThingSpeakData />}></Route>
