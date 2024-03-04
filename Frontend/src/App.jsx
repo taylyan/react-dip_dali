@@ -1,16 +1,16 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
-import Books from "./components/Books";
+import Books from "./components/Devices";
 import Login from "./components/Login";
 import Dashboard from "./components/Dashboard";
 import AddUser from "./components/AddUser";
 import { useEffect, useState } from "react";
 import Logout from "./components/Logout";
 import axios from "axios";
-import AddBook from "./components/AddBook";
-import EditBook from "./components/EditBook";
-import DeleteBook from "./components/DeleteBook";
+import AddDevice from "./components/AddDevice";
+import EditDevice from "./components/EditDevice";
+import DeleteDevice from "./components/DeleteDevice";
 import ThingSpeakData from "./components/Thingspeak";
 import UserHome from "./components/userHome";
 
@@ -34,16 +34,16 @@ function App() {
       <Navbar role = {role}/>
       <Routes>
         <Route path="/" element={<Home/>}></Route>
-        <Route path="/books" element={<Books role = {role}/>}></Route>
+        <Route path="/devices" element={<Devices role = {role}/>}></Route>
         <Route path="/login" element={<Login setRoleVar = {setRole}/>}></Route>
         <Route path="/dashboard" element={<Dashboard />}></Route>
         <Route path="/thingspeak" element={<ThingSpeakData />}></Route>
         <Route path="/adduser" element={<AddUser />}></Route>
         <Route path="/logout" element={<Logout setRole = {setRole}/>}></Route>
-        <Route path="/addbook" element={<AddBook />}></Route>
-        <Route path="/book/:id" element={<EditBook />}></Route>
-        <Route path="/delete/:id" element={<DeleteBook />}></Route>
-        <Route path="/dashboard" element={<UserHome  />}></Route>
+        <Route path="/adddevice" element={<AddDevice />}></Route>
+        <Route path="/device/:id" element={<EditDevice />}></Route>
+        <Route path="/delete/:id" element={<DeleteDevice />}></Route>
+        <Route path="/userHome" element={<UserHome  />}></Route>
 
       </Routes>
     </BrowserRouter>

@@ -5,7 +5,7 @@ import axios from 'axios'
 const Dashboard = () => {
   const [users, setUsers] = useState(0)
   const [admin, setAdmin] = useState(0)
-  const [books, setBooks] = useState(0)
+  const [devices, setDevices] = useState(0)
 
   useEffect(() => {
     axios.get('https://react-dip-dali.onrender.com/dashboard')
@@ -13,7 +13,7 @@ const Dashboard = () => {
       if(res.data.ok) {
         setUsers(res.data.user)
         setAdmin(res.data.admin)
-        setBooks(res.data.book)
+        setDevices(res.data.device)
       }
     }).catch(err => console.log(err))
   } , [])
@@ -21,7 +21,7 @@ const Dashboard = () => {
     <div className="dashboard">
       <div className="dashboard-box">
         <h2>Total Devices</h2> <br />
-        <h2>{books}</h2>
+        <h2>{devices}</h2>
       </div>
       <div className="dashboard-box">
         <h2>Total Users</h2> <br />

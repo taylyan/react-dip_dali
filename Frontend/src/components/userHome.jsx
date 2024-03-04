@@ -1,10 +1,11 @@
 import React, { Component, useEffect, useState } from "react";
+import DeviceCard from "./DeviceCard";
 
 const UserHome = ({role}) => {
-  const [books, setBooks] = useState([])
+  const [devices, setDevices] = useState([])
 
   useEffect(() => {
-    axios.get('https://react-dip-dali.onrender.com/book/booksUser')
+    axios.get('https://react-dip-dali.onrender.com/device/devicesUser')
     .then(res => {
       setBooks(res.data)
       console.log(res.data)
@@ -14,8 +15,8 @@ const UserHome = ({role}) => {
   return (
     <div className='book-list'>
       {
-        books.map(book => {
-          return <BookCard key={book.id} book = {book} role = {role}></BookCard>
+        devices.map(device => {
+          return <DeviceCard key={device.id} device = {device} role = {role}></DeviceCard>
         })
       }
       <iframe width="450" height="260" style="border: 1px solid #cccccc;" 

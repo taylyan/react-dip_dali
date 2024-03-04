@@ -1,12 +1,12 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import BookCard from './BookCard'
+import DeviceCard from './DeviceCard'
 import '../css/Book.css'
 
-const Books = ({role}) => {
-  const [books, setBooks] = useState([])
+const Devices = ({role}) => {
+  const [devices, setBooks] = useState([])
   useEffect(() => {
-    axios.get('https://react-dip-dali.onrender.com/book/books')
+    axios.get('https://react-dip-dali.onrender.com/device/devices')
     .then(res => {
       setBooks(res.data)
       console.log(res.data)
@@ -15,12 +15,12 @@ const Books = ({role}) => {
   return (
     <div className='book-list'>
       {
-        books.map(book => {
-          return <BookCard key={book.id} book = {book} role = {role}></BookCard>
+        devices.map(device => {
+          return <DeviceCard key={device.id} device = {device} role = {role}></DeviceCard>
         })
       }
     </div>
   )
 }
 
-export default Books
+export default Devices

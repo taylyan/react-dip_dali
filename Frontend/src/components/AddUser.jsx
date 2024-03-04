@@ -5,7 +5,7 @@ import  {useNavigate} from 'react-router-dom'
 const AddUser = () => {
     const [region, setRegion] = useState('')
     const [username, setUsername] = useState('')
-    const [email, setGrade] = useState('') 
+    const [email, setEmail] = useState('') 
     const [password, setPassword] = useState('')
     const navigate = useNavigate()
 
@@ -38,7 +38,7 @@ const AddUser = () => {
         <div className="form-group">
           <label htmlFor="email">Имейл:</label>
           <input type="email" id="email" name="email" 
-          onChange={(e) => setGrade(e.target.value)}/>
+          onChange={(e) => setEmail(e.target.value)}/>
         </div>
         <div className="form-group">
           <label htmlFor="password">Password:</label>
