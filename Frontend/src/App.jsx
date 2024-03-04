@@ -43,7 +43,6 @@ function App() {
         <Route path="/adddevice" element={<AddDevice />}></Route>
         <Route path="/device/:id" element={<EditDevice />}></Route>
         <Route path="/delete/:id" element={<DeleteDevice />}></Route>
-        <Route path="/userHome" element={<UserHome  />}></Route>
 
       </Routes>
     </BrowserRouter>
