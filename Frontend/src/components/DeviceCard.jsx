@@ -7,8 +7,8 @@ const DeviceCard = ({ device, role }) => {
 
   return (
     <div className='book-card'>
-      <iframe width="450" height="260" style="border: 1px solid #cccccc;"
-        src={iframeSrc}>
+      <iframe width="450" height="260" style={{ border: "1px solid #cccccc" }} 
+      src={iframeSrc}>
       </iframe>
       <div className="book-details">
         <h3>{name}</h3>
