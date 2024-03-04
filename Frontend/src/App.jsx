@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Navbar from "./components/Navbar";
-import Books from "./components/Devices";
+import Devices from "./components/Devices";
 import Login from "./components/Login";
 import Dashboard from "./components/Dashboard";
 import AddUser from "./components/AddUser";
@@ -34,7 +34,7 @@ function App() {
       <Navbar role = {role}/>
       <Routes>
         <Route path="/" element={<Home/>}></Route>
-        <Route path="/devices" element={<Device role = {role}/>}></Route>
+        <Route path="/devices" element={<Devices role = {role}/>}></Route>
         <Route path="/login" element={<Login setRoleVar = {setRole}/>}></Route>
         <Route path="/dashboard" element={<Dashboard />}></Route>
         <Route path="/thingspeak" element={<ThingSpeakData />}></Route>
