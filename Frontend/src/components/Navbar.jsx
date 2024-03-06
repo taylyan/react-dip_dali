@@ -24,6 +24,7 @@ const Navbar = ({ role }) => {
         {role === "user" && <>
           <Link to="/adddevice" className="navbar-link">Add Устройство</Link>
           <Link to="/thingspeak" className="navbar-link">Thingspeak</Link>
+          <Link to="/userdevices" className="navbar-link">userhome</Link>
 
         </>
         }
@@ -49,6 +50,7 @@ const Navbar = ({ role }) => {
         {role === "user" && <>
           <Link to="/adddevice" className="navbar-link">Add Устройство</Link>
           <Link to="/thingspeak" className="navbar-link">Thingspeak</Link>
+          <Link to="/userdevices" className="navbar-link">userhome</Link>
 
         </>
         }

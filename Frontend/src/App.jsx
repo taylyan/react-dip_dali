@@ -12,7 +12,7 @@ import AddDevice from "./components/AddDevice";
 import EditDevice from "./components/EditDevice";
 import DeleteDevice from "./components/DeleteDevice";
 import ThingSpeakData from "./components/Thingspeak";
-import UserHome from "./components/userHome";
+import UserDevices from "./components/UserDevices";
 
 function App() {
   const [role, setRole] = useState('')
@@ -35,6 +35,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>}></Route>
         <Route path="/devices" element={<Devices role = {role}/>}></Route>
+        <Route path="/userdevices" element={<UserDevices role = {role}/>}></Route>
         <Route path="/login" element={<Login setRoleVar = {setRole}/>}></Route>
         <Route path="/dashboard" element={<Dashboard />}></Route>
         <Route path="/thingspeak" element={<ThingSpeakData />}></Route>

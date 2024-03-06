@@ -5,6 +5,7 @@ const deviceSchema = new mongoose.Schema({
     description : {type: String},
     channel: {type: String, required: true},
     chart: {type: String, required: true},
+    userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
 })
 
 const deviceModel = mongoose.model('Device', deviceSchema)

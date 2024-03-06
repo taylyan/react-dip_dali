@@ -3,10 +3,10 @@ import React, { useEffect, useState } from 'react'
 import DeviceCard from './DeviceCard'
 import '../css/Book.css'
 
-const Devices = ({role}) => {
+const UserDevices = ({role}) => {
   const [devices, setDevices] = useState([])
   useEffect(() => {
-    axios.get('https://react-dip-dali.onrender.com/device/devices')
+    axios.get('https://react-dip-dali.onrender.com/device/user/devices')
     .then(res => {
       setDevices(res.data)
       console.log(res.data)
@@ -23,4 +23,4 @@ const Devices = ({role}) => {
   )
 }
 
-export default Devices
+export default UserDevices
