@@ -9,7 +9,7 @@ router.get('/thingspeak', async (req, res) => {
     const response = await axios.get(thingSpeakAPI);
     console.log(response.data);
     res.console(response.data);
-    const fieldValue = response.data.field1; // Access field1 directly
+    const fieldValue = response.data.field1; // access field1 directly
     res.json({ value: fieldValue });
 
   } catch (error) {

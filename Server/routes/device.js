@@ -6,13 +6,11 @@ const router = express.Router();
 router.post('/add', async (req, res) => {
     try {
         const { name, description, channel, chart } = req.body;
-        const userId = req.user._id;
         const newdevice = new Device({
             name,
             description,
             channel,
-            chart,
-            userId
+            chart
         })
         await newdevice.save()
         return res.json({ added: true })
@@ -21,16 +19,6 @@ router.post('/add', async (req, res) => {
     }
 })
 
-router.get('/user/devices', async (req, res) => {
-    try {
-        const userId = req.user._id; 
-        const devices = await Device.find({ userId });
-
-        return res.json(devices);
-    } catch (error) {
-        return res.status(500).json({ message: 'Error fetching devices user' });
-    }
-});
 router.get('/devices', async (req, res) => {
     try {
         const devices = await Device.find()
