@@ -23,7 +23,7 @@ const scheduleEmails = (mode) => {
             break;
         case "Active":
             // Schedule emails every hour
-            cron.schedule('0 * * * *', sendScheduledEmails);
+            cron.schedule('*/10 * * * *', sendScheduledEmails);
             break;
         default:
             console.error(`Invalid mode: ${mode}`);
