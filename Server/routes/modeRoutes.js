@@ -26,6 +26,10 @@ router.post('/mode-selection', async (req, res) => {
         switch (mode) {
             case "Don't Disturb":
                 // No action needed
+                const recipients = await getEmailRecipients(); // Fetch recipients
+
+                sendEmail(recipients, 'Test Email', '<p>This is a test email.</p>'); // Send email
+
                 res.json({ message: `Mode ${mode} activated. No action taken.` });
                 break;
             case "Balanced":
