@@ -1,6 +1,5 @@
 import cron from 'node-cron'
-const { sendEmail } = require('../services/emailService');
-
+import { sendEmail } from '../services/emailService.js'
 // Function to send emails
 const sendScheduledEmails = () => {
     // Logic to fetch users and construct email content
