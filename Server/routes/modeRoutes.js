@@ -3,6 +3,7 @@ const router = express.Router();
 import { sendEmail } from '../services/emailService.js'; // Your email service for sending notifications
 import { scheduleEmails } from '../cronjobs/emailScheduler.js'
 import { User } from '../models/User.js';
+import axios from "axios";
 
 const getEmailRecipients = async () => {
     try {
