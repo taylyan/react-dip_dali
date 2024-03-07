@@ -31,4 +31,4 @@ const scheduleEmails = (mode) => {
     }
 };
 
-module.exports = scheduleEmails;
+export { scheduleEmails };

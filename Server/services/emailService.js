@@ -25,4 +25,4 @@ const sendEmail = (to, subject, html) => {
     });
 };
 
-module.exports = { sendEmail };
+export { sendEmail };
