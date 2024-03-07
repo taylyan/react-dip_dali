@@ -6,11 +6,13 @@ import './db.js'
 import { AdminRouter } from './routes/auth.js'
 import { userRouter } from './routes/user.js'
 import { deviceRouter } from './routes/device.js'
+import { emailRouter } from './routes/modeRoutes.js.js'
 import { Device } from './models/Device.js'
 import { User } from './models/User.js'
 import { Admin } from './models/Admin.js'
 import { apiRouter } from './routes/thingspeakApi.js'
 
+const cronJobs = require('./cronjobs/emailScheduler.js');
 const app = express()
 app.use(express.json())
 app.use(cors({
@@ -24,6 +26,7 @@ app.use('/user', userRouter)
 app.use('/device', deviceRouter) 
 
 app.use('/api/thingspeak', apiRouter);
+app.use('/email', emailRouter) 
 
 
 app.get('/dashboard', async (req, res) => {
