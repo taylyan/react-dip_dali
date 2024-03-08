@@ -11,7 +11,6 @@ import { Device } from './models/Device.js'
 import { User } from './models/User.js'
 import { Admin } from './models/Admin.js'
 import { apiRouter } from './routes/thingspeakApi.js'
-import { scheduleEmails } from './cronjobs/emailScheduler.js'
 
 const app = express()
 app.use(express.json())
