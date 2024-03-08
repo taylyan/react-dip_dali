@@ -1,17 +1,16 @@
 import express from 'express'
 const router = express.Router();
-import { sendEmail } from '../services/emailService.js'; // Your email service for sending notifications
-import { scheduleEmails } from '../cronjobs/emailScheduler.js'
+import { sendEmail, scheduleEmails } from '../services/emailService.js'; // Your email service for sending notifications
 import { User } from '../models/User.js';
 import axios from "axios";
 
 const getEmailRecipients = async () => {
     try {
-        // Fetch users who have opted in to receive emails, or based on other criteria
-        const recipients = await User.find().select('email');
+        const recipients = await User.findById(req.user._id).select('email');
 
-        // Extract email addresses from the user objects and return them as an array
-        return recipients.map(user => user.email);
+        // Return the email address as an array
+        return [recipients.email];
+        //return recipients.map(user => user.email);
     } catch (error) {
         console.error('Error fetching recipients:', error);
         return []; // Return an empty array or handle the error appropriately

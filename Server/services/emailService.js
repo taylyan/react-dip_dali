@@ -1,7 +1,10 @@
 import nodemailer from 'nodemailer'
+import cron from 'node-cron'
+import { getEmailRecipients } from '../routes/modeRoutes.js'
+
 
 const transporter = nodemailer.createTransport({
-    service: 'Gmail',
+    service: 'gmail',
     auth: {
         user: 'taylyanprotection@gmail.com',
         pass: 'taylansecurity2024'
@@ -25,4 +28,30 @@ const sendEmail = (to, subject, html) => {
     });
 };
 
-export { sendEmail };
+const sendScheduledEmails = () => {
+    const recipients = getEmailRecipients();
+
+    recipients.forEach((recipient) => {
+        sendEmail(recipient, 'Your Email Subject', 'Your Email Content');
+    });
+};
+
+// Schedule the task based on the selected mode
+const scheduleEmails = (mode) => {
+    switch (mode) {
+        case "Don't Disturb":
+            // No email sending in this mode
+            break;
+        case "Balanced":
+            // Schedule emails every 5 hours
+            cron.schedule('0 */5 * * *', sendScheduledEmails);
+            break;
+        case "Active":
+            // Schedule emails every hour
+            cron.schedule('*/10 * * * *', sendScheduledEmails);
+            break;
+        default:
+            console.error(`Invalid mode: ${mode}`);
+    }
+};
+export { sendEmail,scheduleEmails };
