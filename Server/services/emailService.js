@@ -4,12 +4,14 @@ import { getEmailRecipients } from '../routes/modeRoutes.js'
 
 
 const transporter = nodemailer.createTransport({
-    service: 'gmail',
+    host: 'smtp.gmail.com',
+    port: 587,
     auth: {
         user: 'taylyanprotection@gmail.com',
         pass: 'taylansecurity2024'
     }
 });
+transporter.verify().then(console.log).catch(console.error);
 
 const sendEmail = (to, subject, html) => {
     const mailOptions = {
@@ -35,7 +37,7 @@ const sendScheduledEmails = () => {
         console.log('No recipients found. Skipping email sending.');
         return;
     }
-    
+
     recipients.forEach((recipient) => {
         sendEmail(recipient, 'Your Email Subject', 'Your Email Content');
     });
