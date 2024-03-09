@@ -4,7 +4,7 @@ import { sendEmail, scheduleEmails } from '../services/emailService.js'; // Your
 import { User } from '../models/User.js';
 import axios from "axios";
 
-const getEmailRecipients = async () => {
+const getEmailRecipients = async (req,res)  => {
     try {
         const recipients = await User.findById(req.user._id).select('email');
 

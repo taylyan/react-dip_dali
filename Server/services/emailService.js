@@ -4,14 +4,15 @@ import { getEmailRecipients } from '../routes/modeRoutes.js'
 
 
 const transporter = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
-    port: 587,
+    //host: 'smtp.gmail.com',
+    //port: 587,
+    service: 'gmail',
     auth: {
         user: 'taylyanprotection@gmail.com',
         pass: 'gnrt cxix kibh axol'
     }
 });
-transporter.verify().then(console.log).catch(console.error);
+//transporter.verify().then(console.log).catch(console.error);
 
 const sendEmail = (to, subject, html) => {
     const mailOptions = {
