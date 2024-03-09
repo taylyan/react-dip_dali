@@ -31,6 +31,11 @@ const sendEmail = (to, subject, html) => {
 const sendScheduledEmails = () => {
     const recipients = getEmailRecipients();
 
+    if (recipients.length === 0) {
+        console.log('No recipients found. Skipping email sending.');
+        return;
+    }
+    
     recipients.forEach((recipient) => {
         sendEmail(recipient, 'Your Email Subject', 'Your Email Content');
     });
