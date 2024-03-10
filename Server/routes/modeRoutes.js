@@ -26,7 +26,8 @@ const getEmailRecipients = async (userId ) => {
 
 
 // POST route to handle mode selection
-router.get('/mode-selection', async (req, res) => {
+router.post('/mode-selection', async (req, res) => {
+    console.log('stiga1')
     try {
         console.log('stiga')
         const userId = '65e4e4f2a5c1da38b3e483ed' ;
