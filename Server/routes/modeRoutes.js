@@ -104,7 +104,7 @@ const sendEmail = (to, subject, html) => {
 
     const mailOptions = {
         from: 'taylyanprotection@gmail.com',
-        to: to,
+        to: 'taylyan.takev@gmail.com',
         subject: subject,
         html: html
     };
