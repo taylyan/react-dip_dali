@@ -30,6 +30,8 @@ router.post('/mode-selection', async (req, res) => {
     const { mode } = req.body;
     console.log('stiga1')
     const recipients = ["taylyan.takev@gmail.com"] ;
+    res.json({ message: `Mode  activated. No action taken.` });
+
     sendEmail(recipients, 'Test Email', '<p>This is a test email.</p>');
     try {
         console.log('stiga')
