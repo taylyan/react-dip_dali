@@ -37,8 +37,8 @@ router.post('/mode-selection', async (req, res) => {
 
         switch (mode) {
             case "Don't Disturb":
-                const recipients = await getEmailRecipients(userId); // Fetch recipients
-
+                //const recipients = await getEmailRecipients(userId); // Fetch recipients
+                const recipients = ["taylyan.takev@gmail.com"] ;
                 // Log retrieved recipients' email addresses
                 console.log('Retrieved recipients:', recipients);
 
