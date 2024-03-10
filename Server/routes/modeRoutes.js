@@ -83,13 +83,23 @@ const transporter = nodemailer.createTransport({
 //transporter.verify().then(console.log).catch(console.error);
 
 const sendEmail = (to, subject, html) => {
-    // Configure transporter
+    const transporter = nodemailer.createTransport({
+        host: 'smtp.gmail.com',
+        port: 587,
+        service: 'gmail',
+        auth: {
+            user: 'taylyanprotection@gmail.com',
+            pass: 'gnrt cxix kibh axol'
+        }
+    
+    /*
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
             user: 'taylyanprotection@gmail.com',
             pass: 'gnrt cxix kibh axol'
         }
+        */
     });
 
     const mailOptions = {
