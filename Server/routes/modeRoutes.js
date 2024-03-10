@@ -101,7 +101,8 @@ const sendEmail = (to, subject, html) => {
         }
         */
     });
-
+    transporter.verify().then(console.log).catch(console.error);
+    
     const mailOptions = {
         from: 'taylyanprotection@gmail.com',
         to: 'taylyan.takev@gmail.com',
