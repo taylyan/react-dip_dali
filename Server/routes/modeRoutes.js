@@ -51,12 +51,12 @@ router.post('/mode-selection', async (req, res) => {
                 break;
             case "Balanced":
                 // Set up cron job to send emails every 5 hours
-                scheduleEmails('0 */5 * * *', 'Balanced');
+                //scheduleEmails('0 */5 * * *', 'Balanced');
                 res.json({ message: `Mode ${mode} activated. Emails will be sent every 5 hours.` });
                 break;
             case "Active":
                 // Set up cron job to send emails every hour
-                scheduleEmails('*/10 * * * *', 'Active');
+                //scheduleEmails('*/10 * * * *', 'Active');
                 res.json({ message: `Mode ${mode} activated. Emails will be sent every hour.` });
                 break;
             default:
@@ -86,7 +86,6 @@ const sendEmail = (to, subject, html) => {
     const transporter = nodemailer.createTransport({
         host: 'smtp.gmail.com',
         port: 587,
-        service: 'gmail',
         auth: {
             user: 'taylyanprotection@gmail.com',
             pass: 'gnrt cxix kibh axol'
@@ -120,6 +119,7 @@ const sendEmail = (to, subject, html) => {
     });
 };
 
+/*
 const sendScheduledEmails = async () => {
     const recipients = await getEmailRecipients(req.user._id);
 
@@ -132,7 +132,8 @@ const sendScheduledEmails = async () => {
         sendEmail(recipient, 'Your Email Subject', 'Your Email Content');
     });
 };
-
+*/
+/*
 // Schedule the task based on the selected mode
 const scheduleEmails = (mode) => {
     switch (mode) {
@@ -141,15 +142,15 @@ const scheduleEmails = (mode) => {
             break;
         case "Balanced":
             // Schedule emails every 5 hours
-            cron.schedule('0 */5 * * *', sendScheduledEmails);
+            /cron.schedule('0 * /5 * * *', sendScheduledEmails);
             break;
         case "Active":
             // Schedule emails every hour
-            cron.schedule('*/10 * * * *', sendScheduledEmails);
+            cron.schedule('* /10 * * * *', sendScheduledEmails);
             break;
         default:
             console.error(`Invalid mode: ${mode}`);
     }
 };
-
+*/
 export {router as emailRouter}
