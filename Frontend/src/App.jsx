@@ -12,6 +12,7 @@ import AddDevice from "./components/AddDevice";
 import EditDevice from "./components/EditDevice";
 import DeleteDevice from "./components/DeleteDevice";
 import ThingSpeakData from "./components/Thingspeak";
+import DeviceCard from "./components/DeviceCard";
 
 function App() {
   const [role, setRole] = useState('')
@@ -42,6 +43,7 @@ function App() {
         <Route path="/adddevice" element={<AddDevice />}></Route>
         <Route path="/device/:id" element={<EditDevice />}></Route>
         <Route path="/delete/:id" element={<DeleteDevice />}></Route>
+        <Route path="/email" element={<DeviceCard />}></Route>
 
       </Routes>
     </BrowserRouter>
