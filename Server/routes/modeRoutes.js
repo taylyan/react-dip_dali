@@ -5,6 +5,7 @@ import { User } from '../models/User.js';
 import axios from "axios";
 import nodemailer from 'nodemailer'
 import cron from 'node-cron'
+import {verifyUser} from './auth.js'
 
 const getEmailRecipients = async (userId) => {
     try {
@@ -24,11 +25,14 @@ const getEmailRecipients = async (userId) => {
 // POST route to handle mode selection
 router.post('/mode-selection', async (req, res) => {
     try {
+        const userId = req.user ? req.user.id : null;
+        const userEmail = req.user ? req.user.email : null;
+        
         const { mode } = req.body;
 
         switch (mode) {
             case "Don't Disturb":
-                const recipients = await getEmailRecipients(req.user._id); // Fetch recipients
+                const recipients = await getEmailRecipients(userId); // Fetch recipients
 
                 // Log retrieved recipients' email addresses
                 console.log('Retrieved recipients:', recipients);

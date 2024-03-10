@@ -70,6 +70,8 @@ const verifyUser = (req, res, next) => {
                     } else {
                         req.username = decoded.username;
                         req.role = decoded.role;
+                        req.userId = decoded.userId; // Add userId extraction
+                        req.userEmail = decoded.userEmail; // Add userEmail extraction
                         next()
                     }
                 })
@@ -91,4 +93,4 @@ router.get('/logout', (req, res) => {
     return res.json({logout : true})
 })
 
-export {router as AdminRouter, verifyAdmin}
+export {router as AdminRouter, verifyAdmin, verifyUser}
