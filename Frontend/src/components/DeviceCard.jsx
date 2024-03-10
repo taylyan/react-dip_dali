@@ -12,7 +12,7 @@ const DeviceCard = ({ device, role }) => {
   const handleSubmit = () => {
     axios.post('/email/mode-selection', { mode: selectedMode })
         .then(response => {
-            console.log('Mode selection submitted successfully');
+            console.log('Mode selection submitted successfully', response);
             // Optionally, provide user feedback here
         })
         .catch(error => {

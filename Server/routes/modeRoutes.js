@@ -26,7 +26,7 @@ const getEmailRecipients = async (userId ) => {
 
 
 // POST route to handle mode selection
-router.post('/mode-selection', async (req, res) => {
+router.get('/mode-selection', async (req, res) => {
     try {
         console.log('stiga')
         const userId = '65e4e4f2a5c1da38b3e483ed' ;
@@ -138,4 +138,4 @@ const scheduleEmails = (mode) => {
     }
 };
 
-export {router as emailRouter, getEmailRecipients}
+export {router as emailRouter}
