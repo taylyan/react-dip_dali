@@ -3,14 +3,13 @@ const router = express.Router();
 //import { sendEmail, scheduleEmails } from '../services/emailService.js'; // Your email service for sending notifications
 import { User } from '../models/User.js';
 import axios from "axios";
-//import nodemailer from 'nodemailer'
+import nodemailer from 'nodemailer'
 import cron from 'node-cron'
 import {verifyUser} from './auth.js'
 
-const nodemailer = require('nodemailer');
 //const userId = '65e4e4f2a5c1da38b3e483ed'
 //const email = "taylyan.takev@gmail.com"
-
+/*
 const getEmailRecipients = async (userId ) => {
     try {
         const user = await User.findById(userId).select('email');
@@ -24,7 +23,7 @@ const getEmailRecipients = async (userId ) => {
         return []; // Return an empty array or handle the error appropriately
     }
 };
-
+*/
 
 // POST route to handle mode selection
 router.post('/mode-selection', async (req, res) => {
