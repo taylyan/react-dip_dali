@@ -1,21 +1,25 @@
 import express from 'express'
 const router = express.Router();
-import { sendEmail, scheduleEmails } from '../services/emailService.js'; // Your email service for sending notifications
+//import { sendEmail, scheduleEmails } from '../services/emailService.js'; // Your email service for sending notifications
 import { User } from '../models/User.js';
 import axios from "axios";
+import nodemailer from 'nodemailer'
+import cron from 'node-cron'
 
-const getEmailRecipients = async (req,res)  => {
+const getEmailRecipients = async (userId) => {
     try {
-        const recipients = await User.findById(req.user._id).select('email');
-
-        // Return the email address as an array
-        return [recipients.email];
-        //return recipients.map(user => user.email);
+        const user = await User.findById(userId).select('email');
+        if (!user) {
+            console.error('User not found with ID:', userId);
+            return [];
+        }
+        return [user.email]; // Return an array of email addresses
     } catch (error) {
         console.error('Error fetching recipients:', error);
         return []; // Return an empty array or handle the error appropriately
     }
 };
+
 
 // POST route to handle mode selection
 router.post('/mode-selection', async (req, res) => {
@@ -24,10 +28,13 @@ router.post('/mode-selection', async (req, res) => {
 
         switch (mode) {
             case "Don't Disturb":
-                // No action needed
-                const recipients = await getEmailRecipients(); // Fetch recipients
+                const recipients = await getEmailRecipients(req.user._id); // Fetch recipients
 
-                sendEmail(recipients, 'Test Email', '<p>This is a test email.</p>'); // Send email
+                // Log retrieved recipients' email addresses
+                console.log('Retrieved recipients:', recipients);
+
+                // Send email
+                sendEmail(recipients, 'Test Email', '<p>This is a test email.</p>');
 
                 res.json({ message: `Mode ${mode} activated. No action taken.` });
                 break;
@@ -38,7 +45,7 @@ router.post('/mode-selection', async (req, res) => {
                 break;
             case "Active":
                 // Set up cron job to send emails every hour
-                scheduleEmails('0 * * * *', 'Active');
+                scheduleEmails('*/10 * * * *', 'Active');
                 res.json({ message: `Mode ${mode} activated. Emails will be sent every hour.` });
                 break;
             default:
@@ -49,5 +56,78 @@ router.post('/mode-selection', async (req, res) => {
         res.status(500).json({ message: 'Internal server error' });
     }
 });
+
+//emailService
+/*
+const transporter = nodemailer.createTransport({
+    //host: 'smtp.gmail.com',
+    //port: 587,
+    service: 'gmail',
+    auth: {
+        user: 'taylyanprotection@gmail.com',
+        pass: 'gnrt cxix kibh axol'
+    }
+});
+*/
+//transporter.verify().then(console.log).catch(console.error);
+
+const sendEmail = (to, subject, html) => {
+    // Configure transporter
+    const transporter = nodemailer.createTransport({
+        service: 'gmail',
+        auth: {
+            user: 'taylyanprotection@gmail.com',
+            pass: 'gnrt cxix kibh axol'
+        }
+    });
+
+    const mailOptions = {
+        from: 'taylyanprotection@gmail.com',
+        to: to,
+        subject: subject,
+        html: html
+    };
+
+    // Send email
+    transporter.sendMail(mailOptions, function (error, info) {
+        if (error) {
+            console.error('Error sending email:', error);
+        } else {
+            console.log('Email sent:', info.response);
+        }
+    });
+};
+
+const sendScheduledEmails = async () => {
+    const recipients = await getEmailRecipients(req.user._id);
+
+    if (recipients.length === 0) {
+        console.log('No recipients found. Skipping email sending.');
+        return;
+    }
+
+    recipients.forEach((recipient) => {
+        sendEmail(recipient, 'Your Email Subject', 'Your Email Content');
+    });
+};
+
+// Schedule the task based on the selected mode
+const scheduleEmails = (mode) => {
+    switch (mode) {
+        case "Don't Disturb":
+            // No email sending in this mode
+            break;
+        case "Balanced":
+            // Schedule emails every 5 hours
+            cron.schedule('0 */5 * * *', sendScheduledEmails);
+            break;
+        case "Active":
+            // Schedule emails every hour
+            cron.schedule('*/10 * * * *', sendScheduledEmails);
+            break;
+        default:
+            console.error(`Invalid mode: ${mode}`);
+    }
+};
 
 export {router as emailRouter, getEmailRecipients}
