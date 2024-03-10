@@ -7,7 +7,10 @@ import nodemailer from 'nodemailer'
 import cron from 'node-cron'
 import {verifyUser} from './auth.js'
 
-const getEmailRecipients = async (userId) => {
+//const userId = '65e4e4f2a5c1da38b3e483ed'
+//const email = "taylyan.takev@gmail.com"
+
+const getEmailRecipients = async (userId ) => {
     try {
         const user = await User.findById(userId).select('email');
         if (!user) {
@@ -25,8 +28,8 @@ const getEmailRecipients = async (userId) => {
 // POST route to handle mode selection
 router.post('/mode-selection', async (req, res) => {
     try {
-        const userId = req.user ? req.user.id : null;
-        const userEmail = req.user ? req.user.email : null;
+        const userId = '65e4e4f2a5c1da38b3e483ed' ;
+        const userEmail = req.user.email ;
         
         const { mode } = req.body;
 
