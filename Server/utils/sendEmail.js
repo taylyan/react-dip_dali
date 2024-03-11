@@ -1,18 +1,11 @@
 //const nodemailer = require("nodemailer");
 import nodemailer from 'nodemailer'
+import Transport from "nodemailer-brevo-transport"
 
 const sendEmail = async (subject, message, send_to, sent_from, reply_to) => {
-  const transporter = nodemailer.createTransport({
-    host: process.env.EMAIL_HOST,
-    port: "587",
-    auth: {
-      user: process.env.EMAIL_USER,
-      pass: process.env.EMAIL_PASS,
-    },
-    tls: {
-      rejectUnauthorized: false,
-    },
-  });
+  const transporter = nodemailer.createTransport(
+    new Transport({ apiKey: "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" })
+  );
 
   const options = {
     from: sent_from,
