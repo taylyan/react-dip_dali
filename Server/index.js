@@ -7,12 +7,12 @@ import './db.js'
 import { AdminRouter } from './routes/auth.js'
 import { userRouter } from './routes/user.js'
 import { deviceRouter } from './routes/device.js'
-import { emailRouter } from './routes/modeRoutes.js'
+//import { emailRouter } from './routes/modeRoutes.js'
 import { Device } from './models/Device.js'
 import { User } from './models/User.js'
 import { Admin } from './models/Admin.js'
 import { apiRouter } from './routes/thingspeakApi.js'
-import { sendEmail } from './utils/sendEmail.js'
+import { Mailgun } from './utils/sendEmail.js'
 
 const app = express()
 app.use(express.json())
@@ -23,14 +23,18 @@ app.use(cors({
 app.use(cookieParser())
 app.use(bodyParser.json())
 
+app.use(express.urlencoded({ extended: true }));
+
 dotenv.config()
 app.use('/auth', AdminRouter)
 app.use('/user', userRouter)
 app.use('/device', deviceRouter)
 
 app.use('/api/thingspeak', apiRouter);
-app.use('/email', emailRouter)
 
+
+//app.use('/email', emailRouter)
+/*
 app.post("/api/sendemail", async (req, res) => {
     const { email } = req.body;
 
@@ -51,6 +55,30 @@ app.post("/api/sendemail", async (req, res) => {
         res.status(500).json(error.message);
     }
 });
+*/
+
+app.post('/api/email', (req, res) => {
+    const { email, subject, message } = req.body;
+    Mailgun()
+      .messages()
+      .send(
+        {
+          from: 'John Doe <taylyanprotection@gmail.com>',
+          to: `${email}`,
+          subject: `${subject}`,
+          html: `<p>${message}</p>`,
+        },
+        (error, body) => {
+          if (error) {
+            console.log(error);
+            res.status(500).send({ message: 'Error in sending email' });
+          } else {
+            console.log(body);
+            res.send({ message: 'Email sent successfully' });
+          }
+        }
+      );
+  });
 
 app.get('/dashboard', async (req, res) => {
     try {

@@ -1,29 +1,15 @@
-//const nodemailer = require("nodemailer");
-import nodemailer from 'nodemailer'
-import Transport from "nodemailer-brevo-transport"
+import express from 'express'
+import dotenv from 'dotenv'
+import mg from 'mailgun-js'
+//const mg = require('mailgun-js');
 
-const sendEmail = async (subject, message, send_to, sent_from, reply_to) => {
-  const transporter = nodemailer.createTransport(
-    new Transport({ apiKey: "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" })
-  );
+dotenv.config();
 
-  const options = {
-    from: sent_from,
-    to: send_to,
-    replyTo: reply_to,
-    subject: subject,
-    html: message,
-  };
-
-  // Send Email
-  transporter.sendMail(options, function (err, info) {
-    if (err) {
-      console.log(err);
-    } else {
-      console.log(info);
-    }
+const Mailgun = () =>
+  mg({
+    apiKey: process.env.MAILGUN_API_KEY,
+    domain: process.env.MAILGUN_DOMIAN,
   });
-};
 
-//module.exports = sendEmail;
-export {sendEmail}
+
+export {Mailgun}
