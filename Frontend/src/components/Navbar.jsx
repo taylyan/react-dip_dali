@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 import { Link } from 'react-router-dom'
-import Logo from '../assets/logo_gerb.png'
+import Logo from '../assets/ts1.png'
 import '../css/Navbar.css'
 
 const Navbar = ({ role }) => {
