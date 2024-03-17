@@ -33,7 +33,7 @@ a{
     color: rgb(175, 175, 179);
     text-decoration: none;
 }
-.socialmedia img{
+.socialmedia {
    display: flex;
    flex-direction: row;
 }
