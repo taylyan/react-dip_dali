@@ -11,54 +11,6 @@ const Footer=()=>{
             <div className="sb__footer section_padding">
                 <div className="sb__footer-links">
                     <div className="sb__footer-links-div">
-                        <h4>For Business</h4>
-                        <a href="">
-                            <p>Employer</p>
-                        </a>
-                        <a href="">
-                            <p>Employer</p>
-                        </a>
-                        <a href="">
-                            <p>Employer</p>
-                        </a>
-                    </div>
-                    <div className="sb__footer-links-div">
-                        <h4>For Business</h4>
-                        <a href="">
-                            <p>Employer</p>
-                        </a>
-                        <a href="">
-                            <p>Employer</p>
-                        </a>
-                        <a href="">
-                            <p>Employer</p>
-                        </a>
-                    </div>
-                    <div className="sb__footer-links-div">
-                        <h4>For Business</h4>
-                        <a href="">
-                            <p>Employer</p>
-                        </a>
-                        <a href="">
-                            <p>Employer</p>
-                        </a>
-                        <a href="">
-                            <p>Employer</p>
-                        </a>
-                    </div>
-                    <div className="sb__footer-links-div">
-                        <h4>For Business</h4>
-                        <a href="">
-                            <p>Employer</p>
-                        </a>
-                        <a href="">
-                            <p>Employer</p>
-                        </a>
-                        <a href="">
-                            <p>Employer</p>
-                        </a>
-                    </div>
-                    <div className="sb__footer-links-div">
                         <h4>Социални мрежи</h4>
                         <div className="socialmedia">
                             <p><img src={fb} alt="" /></p>
