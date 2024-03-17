@@ -35,7 +35,31 @@ const Footer=()=>{
                         </a>
                     </div>
                     <div className="sb__footer-links-div">
-                        <h4>Свържете се с нас в социалните мрежи</h4>
+                        <h4>For Business</h4>
+                        <a href="">
+                            <p>Employer</p>
+                        </a>
+                        <a href="">
+                            <p>Employer</p>
+                        </a>
+                        <a href="">
+                            <p>Employer</p>
+                        </a>
+                    </div>
+                    <div className="sb__footer-links-div">
+                        <h4>For Business</h4>
+                        <a href="">
+                            <p>Employer</p>
+                        </a>
+                        <a href="">
+                            <p>Employer</p>
+                        </a>
+                        <a href="">
+                            <p>Employer</p>
+                        </a>
+                    </div>
+                    <div className="sb__footer-links-div">
+                        <h4>Социални мрежи</h4>
                         <div className="socialmedia">
                             <p><img src={fb} alt="" /></p>
                             <p><img src={linkedin} alt="" /></p>
@@ -50,7 +74,7 @@ const Footer=()=>{
                 <div className="sb__footer-below">
                     <div className="sb__footer-copyright">
                         <p>
-                            @{new Date().getFullYear()} TaylanSecurity. All rights reserved.
+                            @{new Date().getFullYear()} TaylanSecurity. Всички права запазени.
                         </p>
                     </div>
                     <div className="sb__footer-below-links">
