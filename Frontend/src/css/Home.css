@@ -21,6 +21,7 @@
     align-items: center;
     flex-direction: column;
     background-color: white;
+    align-self: center;
   }
   
   .headerContainer h1 {
