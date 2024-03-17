@@ -20,8 +20,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: #121619;
-    color: white;
+    background-color: white;
   }
   
   .headerContainer h1 {
