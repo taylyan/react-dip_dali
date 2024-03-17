@@ -25,8 +25,8 @@ const AddDevice = () => {
       }
 
   return (
-    <div className="student-form-container">
-      <form className="student-form" onSubmit={handleSubmit}>
+    <div className="user-form-container">
+      <form className="user-form" onSubmit={handleSubmit}>
         <h2>Add Device</h2>
         <div className="form-group">
           <label htmlFor="device">Device Name:</label>
