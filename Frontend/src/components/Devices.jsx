@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import DeviceCard from './DeviceCard'
-import '../css/Book.css'
+import '../css/Device.css'
 
 const Devices = ({role}) => {
   const [devices, setDevices] = useState([])
@@ -13,7 +13,7 @@ const Devices = ({role}) => {
     }).catch(err => console.log(err))
   } , [])
   return (
-    <div className='book-list'>
+    <div className='device-list'>
       {
         devices.map(device => {
           return <DeviceCard key={device.id} device = {device} role = {role}></DeviceCard>

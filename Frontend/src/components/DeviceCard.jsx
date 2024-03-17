@@ -21,21 +21,21 @@ const DeviceCard = ({ device, role }) => {
         });
 };
   return (
-    <div className='book-card'>
+    <div className='device-card'>
       <iframe width="450" height="260" style={{ border: "1px solid #cccccc" }}
         src={iframeSrc}>
       </iframe>
-      <div className="book-details">
+      <div className="device-details">
         <h3>{name}</h3>
         <p>{description}</p>
       </div>
       {role === "admin" &&
-        <div className="book-actions">
+        <div className="device-actions">
           <button><Link to={`/device/${device._id}`} className='btn-link'>edit</Link></button>
           <button><Link to={`/delete/${device._id}`} className='btn-link'>delete</Link></button>
         </div>}
       {role === "user" &&
-        <div className="book-actions">
+        <div className="device-actions">
           <div>
             <h2>Select Your Preferred Mode</h2>
             <div>
