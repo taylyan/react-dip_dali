@@ -23,6 +23,18 @@ const Footer=()=>{
                         </a>
                     </div>
                     <div className="sb__footer-links-div">
+                        <h4>For Business</h4>
+                        <a href="">
+                            <p>Employer</p>
+                        </a>
+                        <a href="">
+                            <p>Employer</p>
+                        </a>
+                        <a href="">
+                            <p>Employer</p>
+                        </a>
+                    </div>
+                    <div className="sb__footer-links-div">
                         <h4>Свържете се с нас в социалните мрежи</h4>
                         <div className="socialmedia">
                             <p><img src={fb} alt="" /></p>
