@@ -11,7 +11,7 @@ const Footer=()=>{
             <div className="sb__footer section_padding">
                 <div className="sb__footer-links">
                     <div className="sb__footer-links-div">
-                        <h4>Социални мрежи</h4>
+                        <h4>Социални мрежи:</h4>
                         <div className="socialmedia">
                             <p><img src={fb} alt="" /></p>
                             <p><img src={linkedin} alt="" /></p>
