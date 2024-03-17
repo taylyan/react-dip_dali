@@ -1,5 +1,5 @@
 .section_padding{
-    padding: 0.5rem 4rem;
+    padding: 0.5rem ;
 }
 .footer{
     background-color:#2b3990;
@@ -39,10 +39,13 @@ a{
 .socialmedia img{
     width: 20%;
     margin-right: 0.5rem;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    transition-delay: 0.1s;
 }
-.socialmedia img:hover {
+.socialmedia p:hover {
     transform: scale(1.2) rotate(45deg); 
+    opacity: 0.8;
+    transition-delay: 0s;
 }
 .sb__footer-links_div h4{
     font-size: 14px;
