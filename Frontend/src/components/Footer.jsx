@@ -26,14 +26,14 @@ const Footer=()=>{
                 <div className="sb__footer-below">
                     <div className="sb__footer-copyright">
                         <p>
-                            @{new Date().getFullYear()} TaylanSecurity. Всички права запазени.
+                            @{new Date().getFullYear()} TaylanSecurity™. Всички права запазени.
                         </p>
                     </div>
                     <div className="sb__footer-below-links">
-                        <div><p>Terms & Conditions</p></div>
-                        <div><p>Privacy</p></div>
-                        <div><p>Security</p></div>
-                        <div><p>Cookie Declaration</p></div>
+                        <div><p>Правила & условия</p></div>
+                        <div><p>Поверителност</p></div>
+                        <div><p>Сигурност</p></div>
+                        <div><p>Декларация за бисквитки</p></div>
 
                     </div>
                 </div>
