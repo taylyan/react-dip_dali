@@ -13,6 +13,7 @@ import EditDevice from "./components/EditDevice";
 import DeleteDevice from "./components/DeleteDevice";
 import ThingSpeakData from "./components/Thingspeak";
 import DeviceCard from "./components/DeviceCard";
+import Footer from "./components/Footer"
 
 function App() {
   const [role, setRole] = useState('')
@@ -46,6 +47,7 @@ function App() {
         <Route path="/email" element={<DeviceCard />}></Route>
 
       </Routes>
+      <Footer/>
     </BrowserRouter>
   );
 }
