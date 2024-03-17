@@ -36,12 +36,9 @@ a{
 .socialmedia {
    display: flex;
    flex-direction: row;
-   margin: 0;
-   padding: 0; 
 }
 .socialmedia img{
     width: 20%;
-    margin-right: 0.5rem;
 }
 .sb__footer-links_div h4{
     font-size: 14px;
