@@ -13,12 +13,15 @@
   
   .headerContainer {
     width: auto;
-    margin-left: 50px;
+    margin-left: 0px;
+    border-radius: 10px;
+    padding: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: white;
+    background-color: #121619;
+    color: white;
   }
   
   .headerContainer h1 {
