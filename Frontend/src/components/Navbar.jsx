@@ -38,7 +38,8 @@ const Navbar = ({ role }) => {
         </div>
       </div>
       <div className='rightSide'>
-        <Link to="/devices" className='navbar-link'>Устройства</Link>
+          <Link to="/about" className='navbar-link'>За нас</Link>
+          <Link to="/contact" className='navbar-link'>Свържи се с нас</Link>
         
         {role === "admin" && <>
           <Link to="/devices" className='navbar-link'>Устройства</Link>
