@@ -11,18 +11,21 @@ const Navbar = ({ role }) => {
         <div className='leftSide'>
 
           <div className='hiddenLinks'>
-          <Link to="/devices" className='navbar-link'>Устройства</Link>
+          <Link to="/about" className='navbar-link'>За нас</Link>
+          <Link to="/contact" className='navbar-link'>Свържи се с нас</Link>
 
         {role === "admin" && <>
-          <Link to="/adddevice" className="navbar-link">Add Устройство</Link>
-          <Link to="/adduser" className="navbar-link">Add Student</Link>
-          <Link to="/dashboard" className="navbar-link">Dashboard</Link>
+          <Link to="/devices" className='navbar-link'>Устройства</Link>
+          <Link to="/adddevice" className="navbar-link">Добави Устройство</Link>
+          <Link to="/adduser" className="navbar-link">Добави User</Link>
+          <Link to="/dashboard" className="navbar-link">Табло на админ</Link>
           <Link to="/thingspeak" className="navbar-link">Thingspeak</Link>
 
         </>
         }
         {role === "user" && <>
-          <Link to="/adddevice" className="navbar-link">Add Устройство</Link>
+          <Link to="/devices" className='navbar-link'>Устройства</Link>
+          <Link to="/adddevice" className="navbar-link">Добави Устройство</Link>
           <Link to="/thingspeak" className="navbar-link">Thingspeak</Link>
 
         </>
@@ -38,6 +41,7 @@ const Navbar = ({ role }) => {
         <Link to="/devices" className='navbar-link'>Устройства</Link>
         
         {role === "admin" && <>
+          <Link to="/devices" className='navbar-link'>Устройства</Link>
           <Link to="/adddevice" className="navbar-link">Add Устройство</Link>
           <Link to="/adduser" className="navbar-link">Add Student</Link>
           <Link to="/dashboard" className="navbar-link">Dashboard</Link>
@@ -47,6 +51,7 @@ const Navbar = ({ role }) => {
         }
 
         {role === "user" && <>
+          <Link to="/devices" className='navbar-link'>Устройства</Link>
           <Link to="/adddevice" className="navbar-link">Add Устройство</Link>
           <Link to="/thingspeak" className="navbar-link">Thingspeak</Link>
         </>

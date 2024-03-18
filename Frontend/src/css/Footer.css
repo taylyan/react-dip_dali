@@ -4,7 +4,7 @@
 .footer{
     background-color:#2b3990;
     border-top: gray;
-    border-top-width: 2px;
+    border-top-width: medium;
 }
 
 .sb__footer{
@@ -50,6 +50,7 @@ a{
     transition-delay: 0s;
 }
 .sb__footer-links_div h4{
+    color: #c5cee2;;
     font-size: 14px;
     line-height: 17px;
     margin-bottom: 0.9rem;

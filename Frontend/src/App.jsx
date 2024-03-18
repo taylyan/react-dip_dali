@@ -14,6 +14,8 @@ import DeleteDevice from "./components/DeleteDevice";
 import ThingSpeakData from "./components/Thingspeak";
 import DeviceCard from "./components/DeviceCard";
 import Footer from "./components/Footer"
+import About from "./components/About"
+import Contact from "./components/Contact";
 
 function App() {
   const [role, setRole] = useState('')
@@ -36,6 +38,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home/>}></Route>
         <Route path="/devices" element={<Devices role = {role}/>}></Route>
+        <Route path="/about" element={<About />}></Route>
+        <Route path="/contact" element={<Contact />}></Route>
         <Route path="/login" element={<Login setRoleVar = {setRole}/>}></Route>
         <Route path="/dashboard" element={<Dashboard />}></Route>
         <Route path="/thingspeak" element={<ThingSpeakData />}></Route>
