@@ -6,7 +6,7 @@ import '../css/Navbar.css'
 const Navbar = ({ role }) => {
   return (
     <nav className='navbar'>
-       <img src={Logo} />
+       <a href="/"><img src={Logo} /> </a>
       <div className='leftSide'>
         <div className='leftSide'>
 
