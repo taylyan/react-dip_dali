@@ -42,15 +42,12 @@ const Navbar = ({ role }) => {
         </div>
       </div>
       <div className='rightSide'>
-        <Link to="/about" className='navbar-link'>За нас</Link>
-        <Link to="/contact" className='navbar-link'>Свържи се с нас</Link>
-
-        {role !== "admin" && (
+        {(role !== "user" && role !== "admin") &&
           <>
-          <Link to="/about" className='navbar-link'>За нас</Link>
-          <Link to="/contact" className='navbar-link'>Свържи се с нас</Link>
-        </>
-        )}
+            <Link to="/about" className='navbar-link'>За нас</Link>
+            <Link to="/contact" className='navbar-link'>Свържи се с нас</Link>
+          </>
+        }
 
         {role === "admin" && <>
           <Link to="/devices" className='navbar-link'>Устройства</Link>
@@ -66,14 +63,10 @@ const Navbar = ({ role }) => {
           <Link to="/devices" className='navbar-link'>Устройства</Link>
           <Link to="/adddevice" className="navbar-link">Добави Устройство</Link>
           <Link to="/thingspeak" className="navbar-link">Thingspeak</Link>
+          <Link to="/about" className='navbar-link'>За нас</Link>
         </>
         }
 
-        {role !== "user" && (
-          <>
-          <Link to="/contact" className='navbar-link'>Свържи се с нас</Link>
-        </>
-        )}
 
         {role === "" ?
           <Link to="/login" className='navbar-link'>Влез</Link>
