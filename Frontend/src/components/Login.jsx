@@ -27,26 +27,26 @@ const Login = ({setRoleVar}) => {
   return (
     <div className='login-page'>
       <div className="login-container">
-        <h2>Login</h2>
+        <h2>Влез</h2>
         <div className="form-group">
-          <label htmlFor="username">Username:</label>
+          <label htmlFor="username">Псевдоним:</label>
           <input type="text" placeholder='Enter Username'
            onChange={(e) => setUsername(e.target.value)}/>
         </div>
         <div className="form-group">
-          <label htmlFor="password">Password:</label>
+          <label htmlFor="password">Парола:</label>
           <input type="password" placeholder='Enter Password'
            onChange={(e) => setPassword(e.target.value)}/>
         </div>
         <div className="form-group">
-          <label htmlFor="role">Role:</label>
+          <label htmlFor="role">Роля:</label>
           <select name="role" id="role"
            onChange={(e) => setRole(e.target.value)}>
-            <option value="admin">Admin</option>
-            <option value="user">User</option>
+            <option value="admin">Администратор</option>
+            <option value="user">Потребител</option>
           </select>
         </div>
-        <button className='btn-login' onClick={handleSubmit}>Login</button>
+        <button className='btn-login' onClick={handleSubmit}>Влез</button>
       </div>
     </div>
   )

@@ -10,7 +10,7 @@ const Home = () => {
     <div className="home" style={{ backgroundImage: `url(${BannerImage})` }}>
         <div className="headerContainer" >
 
-            <h1>SECURITY IS NUMBER ONE PRIORITY</h1>
+            <h1>СИГУРНОСТТА Е ПРИОРИТЕТ НОМЕР ЕДНО</h1>
             
                     
         </div>

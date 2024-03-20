@@ -27,28 +27,28 @@ const AddDevice = () => {
   return (
     <div className="user-form-container">
       <form className="user-form" onSubmit={handleSubmit}>
-        <h2>Add Device</h2>
+        <h2>Добави Устройство</h2>
         <div className="form-group">
-          <label htmlFor="device">Device Name:</label>
+          <label htmlFor="device">Име на устройство:</label>
           <input type="text" id="device" name="device" 
           onChange={(e) => setName(e.target.value)}/>
         </div>
         <div className="form-group">
-          <label htmlFor="description">Description:</label>
+          <label htmlFor="description">Описание:</label>
           <input type="text" id="description" name="description" 
           onChange={(e) => setDescription(e.target.value)}/>
         </div>
         <div className="form-group">
-          <label htmlFor="image">Channel:</label>
+          <label htmlFor="image">Канал:</label>
           <input type="text" id="channel" name="channel" 
           onChange={(e) => setChannel(e.target.value)}/>
         </div>
         <div className="form-group">
-          <label htmlFor="image">Chart:</label>
+          <label htmlFor="image">Графика:</label>
           <input type="text" id="chart" name="chart" 
           onChange={(e) => setChart(e.target.value)}/>
         </div>
-        <button type="submit">Add </button>
+        <button type="submit">Добави </button>
       </form>
     </div>
   )

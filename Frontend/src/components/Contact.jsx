@@ -8,15 +8,15 @@ function Contact() {
     <div className='leftSide' style={{ backgroundImage: `url(${Picture})` }}>
     </div>
     <div className='rightSide'>
-      <h1>Contact us</h1>
+      <h1>Свържи се с нас</h1>
       <form id='contact-form' method='POST'>
-        <label htmlFor='name'>Full name</label>
+        <label htmlFor='name'>Имена:</label>
         <input name='name' placeholder='Enter full name...' type='text'/>
-        <label htmlFor='email'>Full name</label>
+        <label htmlFor='email'>Имейл:</label>
         <input name='email' placeholder='Enter email...' type='email'/>
-        <label htmlFor='message'>Message</label>
+        <label htmlFor='message'>Съобщение</label>
         <textarea rows="6" placeholder='Enter message.....' name='message' required> </textarea>
-        <button type='submit'>Send Message</button>
+        <button type='submit'>Изпрати Съобщение</button>
       </form>
       </div>
   </div>

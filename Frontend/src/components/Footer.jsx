@@ -29,6 +29,7 @@ const Footer=()=>{
                             @{new Date().getFullYear()} TaylanSecurity™. Всички права запазени.
                         </p>
                     </div>
+                    {/* 
                     <div className="sb__footer-below-links">
                         <div><p>Правила & условия</p></div>
                         <div><p>Поверителност</p></div>
@@ -36,6 +37,7 @@ const Footer=()=>{
                         <div><p>Декларация за бисквитки</p></div>
 
                     </div>
+                    */}
                 </div>
             </div>
         </div>

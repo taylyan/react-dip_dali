@@ -20,15 +20,15 @@ const Dashboard = () => {
   return (
     <div className="dashboard">
       <div className="dashboard-box">
-        <h2>Total Devices</h2> <br />
+        <h2>Всички Устройства</h2> <br />
         <h2>{devices}</h2>
       </div>
       <div className="dashboard-box">
-        <h2>Total Users</h2> <br />
+        <h2>Всички Потребители</h2> <br />
         <h2>{users}</h2>
       </div>
       <div className="dashboard-box">
-        <h2>Total Admins</h2> <br />
+        <h2>Всички Администратори</h2> <br />
         <h2>{admin}</h2>
       </div>
     </div>

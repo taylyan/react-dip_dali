@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.post('/register', async (req, res) => {
     try {
-        const {username, password, email, region} = req.body;
+        const {username, password, email} = req.body;
         const user = await User.findOne({username})
         if(user) {
             return res.json({message: "user is registered"})
@@ -15,7 +15,6 @@ router.post('/register', async (req, res) => {
         const newuser = new User({
             username,
             password: hashPassword,
-            region: region,
             email
         })
         await newuser.save()

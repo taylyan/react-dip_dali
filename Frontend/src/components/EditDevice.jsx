@@ -39,28 +39,28 @@ const EditDevice = () => {
   return (
     <div className="student-form-container">
       <form className="student-form" onSubmit={handleSubmit}>
-        <h2>Edit Device</h2>
+        <h2>Редактирай Устройство</h2>
         <div className="form-group">
-          <label htmlFor="device">Book Name:</label>
+          <label htmlFor="device">Име на устройство:</label>
           <input type="text" id="device" name="device"  value={name}
           onChange={(e) => setName(e.target.value)}/>
         </div>
         <div className="form-group">
-          <label htmlFor="description">description:</label>
+          <label htmlFor="description">Описание:</label>
           <input type="text" id="description" name="description" value ={description}
           onChange={(e) => setDescription(e.target.value)}/>
         </div>
         <div className="form-group">
-          <label htmlFor="channel">channel:</label>
+          <label htmlFor="channel">Канал:</label>
           <input type="text" id="channel" name="channel" value={channel}
           onChange={(e) => setChannel(e.target.value)}/>
         </div>
         <div className="form-group">
-          <label htmlFor="chart">chart:</label>
+          <label htmlFor="chart">Графика:</label>
           <input type="text" id="chart" name="chart" value={chart}
           onChange={(e) => setChart(e.target.value)}/>
         </div>
-        <button type="submit">Update </button>
+        <button type="submit">Актуализирай </button>
       </form>
     </div>
   )
