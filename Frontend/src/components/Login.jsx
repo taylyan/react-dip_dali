@@ -22,7 +22,7 @@ const Login = ({setRoleVar}) => {
         navigate('/devices')
         alert('Успешно влизане.');
       } else{
-        alert('Неуспешно влизане. Моля, проверете имейла или паролата си.');
+        alert('Неуспешно влизане. Моля, проверете имейла, паролата или ролята си.');
       }
       
       console.log(res)
@@ -32,6 +32,9 @@ const Login = ({setRoleVar}) => {
 
   return (
     <div className='login-page'>
+      <div className='notify'>
+        <p>За да имате достъп до сайта трябва да ви бъде предоставен профил от администратор!</p>
+      </div>
       <div className="login-container">
         <h2>Влез</h2>
         <div className="form-group">
