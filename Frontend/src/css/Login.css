@@ -8,7 +8,20 @@
     height: 90vh;
     background-color: #2b3990;
   }
-  
+  .login-container, .notify {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+  }
   .login-container, .user-form {
     background-color: rgba(255, 255, 255, 0.7);
     border-radius: 8px;

@@ -1,52 +1,59 @@
 import React, { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 import '../css/Login.css'
 import axios from 'axios'
-const Login = ({ setRoleVar }) => {
+const Login = ({setRoleVar}) => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [role, setRole] = useState('admin')
   const navigate = useNavigate()
-
+  
   axios.defaults.withCredentials = true;
   const handleSubmit = () => {
-    axios.post('https://react-dip-dali.onrender.com/auth/login', { username, password, role })
-      .then(res => {
-        if (res.data.login && res.data.role === 'admin') {
-          setRoleVar('admin')
-          navigate('/dashboard')
-          alert('Успешно влизане.');
-        } else if (res.data.login && res.data.role === 'user') {
-          setRoleVar('user')
-          navigate('/devices')
-          alert('Успешно влизане.');
-        } else {
-          alert('Неуспешно влизане. Моля, проверете имейла, паролата или ролята си.');
-        }
+    axios.post('https://react-dip-dali.onrender.com/auth/login', {username, password, role})
+    .then(res => {
+      if(res.data.login && res.data.role === 'admin') {
+        setRoleVar('admin')
+        navigate('/dashboard')
+        alert('Успешно влизане.');
 
-        console.log(res)
-      })
-      .catch(err => console.log(err))
+      } else if (res.data.login && res.data.role === 'user') {
+        setRoleVar('user')
+        navigate('/devices')
+        alert('Успешно влизане.');
+      } else{
+        alert('Неуспешно влизане. Моля, проверете имейла, паролата или ролята си.');
+      }
+      
+      console.log(res)
+    })
+    .catch(err => console.log(err))
   }
 
   return (
     <div className='login-page'>
       <div className="login-container">
+      <p>За да имате достъп до сайта трябва да ви бъде предоставен профил от администратор!</p>
+      <div className='notify'>
+        <p>За да имате достъп до сайта трябва да ви бъде предоставен профил от администратор!</p>
+      </div>
+      </div>
+      <div className="login-container">
         <h2>Влез</h2>
         <div className="form-group">
           <label htmlFor="username">Псевдоним:</label>
           <input type="text" placeholder='Enter Username'
-            onChange={(e) => setUsername(e.target.value)} />
+           onChange={(e) => setUsername(e.target.value)}/>
         </div>
         <div className="form-group">
           <label htmlFor="password">Парола:</label>
           <input type="password" placeholder='Enter Password'
-            onChange={(e) => setPassword(e.target.value)} />
+           onChange={(e) => setPassword(e.target.value)}/>
         </div>
         <div className="form-group">
           <label htmlFor="role">Роля:</label>
           <select name="role" id="role"
-            onChange={(e) => setRole(e.target.value)}>
+           onChange={(e) => setRole(e.target.value)}>
             <option value="admin">Администратор</option>
             <option value="user">Потребител</option>
           </select>
