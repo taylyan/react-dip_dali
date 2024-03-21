@@ -39,6 +39,7 @@ const Login = ({setRoleVar}) => {
       </div>
       </div>
       <div className="login-container">
+        <h2>За да имате достъп до сайта трябва да ви бъде предоставен профил от администратор!</h2>
         <h2>Влез</h2>
         <div className="form-group">
           <label htmlFor="username">Псевдоним:</label>
