@@ -7,7 +7,7 @@ const Login = ({setRoleVar}) => {
   const [password, setPassword] = useState('')
   const [role, setRole] = useState('admin')
   const navigate = useNavigate()
-
+  
   axios.defaults.withCredentials = true;
   const handleSubmit = () => {
     axios.post('https://react-dip-dali.onrender.com/auth/login', {username, password, role})
@@ -15,10 +15,16 @@ const Login = ({setRoleVar}) => {
       if(res.data.login && res.data.role === 'admin') {
         setRoleVar('admin')
         navigate('/dashboard')
+        alert('Успешно влизане.');
+
       } else if (res.data.login && res.data.role === 'user') {
         setRoleVar('user')
         navigate('/devices')
+        alert('Успешно влизане.');
+      } else{
+        alert('Неуспешно влизане. Моля, проверете имейла или паролата си.');
       }
+      
       console.log(res)
     })
     .catch(err => console.log(err))
