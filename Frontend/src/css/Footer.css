@@ -37,6 +37,7 @@ a{
 .socialmedia {
    display: flex;
    flex-direction: row;
+   padding-block: 12px;
 }
 .socialmedia img{
     width: 20%;
