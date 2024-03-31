@@ -37,20 +37,20 @@ const DeviceCard = ({ device, role }) => {
       {role === "user" &&
         <div className="device-actions">
           <div>
-            <h2>Select Your Preferred Mode</h2>
+            <h2>Изберете режим на работа</h2>
             <div>
                 <input type="radio" id="mode1" name="mode" value="Don't Disturb" onChange={handleModeChange} />
-                <label htmlFor="mode1">Don't Disturb</label>
+                <label htmlFor="mode1">Не безпокой</label>
             </div>
             <div>
                 <input type="radio" id="mode2" name="mode" value="Balanced" onChange={handleModeChange} />
-                <label htmlFor="mode2">Balanced</label>
+                <label htmlFor="mode2">Балансиран</label>
             </div>
             <div>
                 <input type="radio" id="mode3" name="mode" value="Active" onChange={handleModeChange} />
-                <label htmlFor="mode3">Active</label>
+                <label htmlFor="mode3">Активен</label>
             </div>
-            <button onClick={handleSubmit}>Submit</button>
+            <button onClick={handleSubmit}>Изпрати</button>
         </div>
         </div>}
 
