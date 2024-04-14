@@ -11,7 +11,6 @@ import axios from "axios";
 import AddDevice from "./components/AddDevice";
 import EditDevice from "./components/EditDevice";
 import DeleteDevice from "./components/DeleteDevice";
-import ThingSpeakData from "./components/Thingspeak";
 import DeviceCard from "./components/DeviceCard";
 import Footer from "./components/Footer"
 import About from "./components/About"
@@ -42,7 +41,6 @@ function App() {
         <Route path="/contact" element={<Contact />}></Route>
         <Route path="/login" element={<Login setRoleVar = {setRole}/>}></Route>
         <Route path="/dashboard" element={<Dashboard />}></Route>
-        <Route path="/thingspeak" element={<ThingSpeakData />}></Route>
         <Route path="/adduser" element={<AddUser />}></Route>
         <Route path="/logout" element={<Logout setRole = {setRole}/>}></Route>
         <Route path="/adddevice" element={<AddDevice />}></Route>

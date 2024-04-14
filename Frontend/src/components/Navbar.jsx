@@ -23,14 +23,12 @@ const Navbar = ({ role }) => {
               <Link to="/adddevice" className="navbar-link">Добави Устройство</Link>
               <Link to="/adduser" className="navbar-link">Добави Потребител</Link>
               <Link to="/dashboard" className="navbar-link">Информационно табло</Link>
-              <Link to="/thingspeak" className="navbar-link">Thingspeak</Link>
 
             </>
             }
             {role === "user" && <>
               <Link to="/devices" className='navbar-link'>Устройства</Link>
               <Link to="/adddevice" className="navbar-link">Добави Устройство</Link>
-              <Link to="/thingspeak" className="navbar-link">Thingspeak</Link>
 
             </>
             }
@@ -54,7 +52,6 @@ const Navbar = ({ role }) => {
           <Link to="/adddevice" className="navbar-link">Добави Устройство</Link>
           <Link to="/adduser" className="navbar-link">Добави Потребител</Link>
           <Link to="/dashboard" className="navbar-link">Информационно табло</Link>
-          <Link to="/thingspeak" className="navbar-link">Thingspeak</Link>
 
         </>
         }
@@ -62,7 +59,6 @@ const Navbar = ({ role }) => {
         {role === "user" && <>
           <Link to="/devices" className='navbar-link'>Устройства</Link>
           <Link to="/adddevice" className="navbar-link">Добави Устройство</Link>
-          <Link to="/thingspeak" className="navbar-link">Thingspeak</Link>
           <Link to="/about" className='navbar-link'>За нас</Link>
         </>
         }

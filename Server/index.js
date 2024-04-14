@@ -11,7 +11,6 @@ import { deviceRouter } from './routes/device.js'
 import { Device } from './models/Device.js'
 import { User } from './models/User.js'
 import { Admin } from './models/Admin.js'
-import { apiRouter } from './routes/thingspeakApi.js'
 import { Mailgun } from './utils/sendEmail.js'
 
 const app = express()
@@ -29,8 +28,6 @@ dotenv.config()
 app.use('/auth', AdminRouter)
 app.use('/user', userRouter)
 app.use('/device', deviceRouter)
-
-app.use('/api/thingspeak', apiRouter);
 
 
 //app.use('/email', emailRouter)

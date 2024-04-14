@@ -13,7 +13,7 @@ const Footer=()=>{
                     <div className="sb__footer-links-div">
                         <h4>Социални мрежи:</h4>
                         <div className="socialmedia">
-                            <a href="https://www.facebook.com"><p><img src={fb} alt="facebook" /></p></a>
+                            <a href="https://www.facebook.com/profile.php?id=61557892487944"><p><img src={fb} alt="facebook" /></p></a>
                             <a href="https://www.linkedin.com/in/taylyan/"><p><img src={linkedin} alt="" /></p></a>
                             <a href="https://www.instagram.com"> <p><img src={instagram} alt="" /></p></a>
                             <a href="https://github.com/taylyan"><p><img src={github} alt="" /></p>  </a>
